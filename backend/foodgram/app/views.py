@@ -69,7 +69,8 @@ class RecipeViewSet(viewsets.ModelViewSet):
             p.drawString(100,x, str)
             x -= 25
         p.showPage() 
-        p.save() 
+        p.save()
+        ShoppingCart.objects.filter(user=request.user).delete()
         return response
 
 

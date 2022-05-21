@@ -48,6 +48,7 @@ class SubscriptionSerializer(serializers.ModelSerializer):
     is_subscribed = serializers.SerializerMethodField()
     recipes_count = serializers.SerializerMethodField()
     recipes = serializers.SerializerMethodField()
+    
     class Meta:
         model = Subscription
         fields = ('id', 'email', 'username', 'first_name', 

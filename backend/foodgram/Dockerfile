@@ -1,5 +1,5 @@
 FROM python:3.7-slim
 COPY ./ /web
-RUN pip install -r /web/requirements.txt
 WORKDIR /web/
-CMD python manage.py runserver 0:5000
+RUN pip install -r requirements.txt
+CMD ["gunicorn", "foodgram.wsgi:application", "--bind", "0:8000" ]
