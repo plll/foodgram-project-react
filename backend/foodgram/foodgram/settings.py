@@ -68,7 +68,11 @@ DJOSER = {
          'current_user': 'users.serializers.UserSerializer',
          'user': 'users.serializers.UserSerializer'
     },
-    'LOGIN_FIELD': 'email'
+    'LOGIN_FIELD': 'email',
+    'PERMISSIONS': {
+        'user': ('rest_framework.permissions.IsAuthenticated',),
+        'user_list': ('rest_framework.permissions.AllowAny',)
+    },
 }
 
 ROOT_URLCONF = 'foodgram.urls'
