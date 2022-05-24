@@ -19,7 +19,7 @@ services:
     
   backend:
     build:
-      context: ../backend/
+      context: ../backend/foodgram/
       dockerfile: Dockerfile
       
     ports:
