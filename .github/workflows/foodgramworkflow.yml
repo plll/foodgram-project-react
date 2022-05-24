@@ -42,7 +42,7 @@ jobs:
         with:
           push: true
           tags: leoklim/foodgram_backend
-          context: ../backend/foodgram/
+          context: ./backend/foodgram/
   
   deploy:
     runs-on: ubuntu-latest
