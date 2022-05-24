@@ -41,7 +41,7 @@ jobs:
         uses: docker/build-push-action@v2 
         with:
           push: true
-          tags: leoklim/foodgram_backend
+          context: ../backend/foodgram/
   
   deploy:
     runs-on: ubuntu-latest
