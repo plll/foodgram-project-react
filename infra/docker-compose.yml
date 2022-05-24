@@ -18,7 +18,9 @@ services:
       - ./.env
     
   backend:
-    image: leoklim/foodgram_backend:latest
+    build:
+      context: ../backend/
+      dockerfile: Dockerfile
       
     ports:
       - "8000:8000"
