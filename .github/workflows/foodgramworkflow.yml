@@ -55,7 +55,6 @@ jobs:
         key: ${{ secrets.SSH_KEY }}
         passphrase: ${{ secrets.PASSPHRASE }}
         script: |
-          sudo docker pull leoklim/foodgram_backend:latest
           cd foodgram-project-react/infra
           sudo docker-compose stop
           sudo docker-compose rm -f backend
@@ -67,4 +66,5 @@ jobs:
           echo POSTGRES_PASSWORD=${{ secrets.POSTGRES_PASSWORD }} >> .env
           echo DB_HOST=${{ secrets.DB_HOST }} >> .env
           echo DB_PORT=${{ secrets.DB_PORT }} >> .env
+          sudo docker-compose build 
           sudo docker-compose up -d
