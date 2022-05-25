@@ -11,8 +11,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 env = Env()
 env.read_env()
 
-KEY = env.str('SECRET_KEY')
-SECRET_KEY = str(KEY)
+#KEY = env.str('SECRET_KEY')
+SECRET_KEY = 'hney_l2212ig4++0xtlmj53un35#^yf5qof7s6x*l8if91zc4&'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
