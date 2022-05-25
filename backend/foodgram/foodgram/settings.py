@@ -16,7 +16,6 @@ SECRET_KEY = str(KEY)
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-HOSTS = env.str('ALLOWED_HOSTS')
 ALLOWED_HOSTS = ["*"]
 
 
