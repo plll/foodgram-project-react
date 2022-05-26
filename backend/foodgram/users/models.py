@@ -1,5 +1,7 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
+from django.db.models.expressions import F
+from django.db.models.query_utils import Q
 
 
 class User(AbstractUser):
@@ -38,3 +40,15 @@ class Subscription(models.Model):
         on_delete=models.CASCADE,
         related_name='following'
     )
+    
+    class Meta:
+        constraints = [
+            models.UniqueConstraint(
+                fields=['user', 'author'],
+                name='Вы уже подписывались на данного автора!'
+            ),
+            models.CheckConstraint(
+                check=~Q(user=F('author')),
+                name='Подсписываться на себя нельзя!'
+            )
+        ]

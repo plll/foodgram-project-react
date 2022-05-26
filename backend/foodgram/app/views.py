@@ -36,7 +36,8 @@ class RecipeViewSet(viewsets.ModelViewSet):
     serializer_class = RecipeSerializer
     
     def perform_create(self, serializer):
-        serializer.save(author=self.request.user)
+        if serializer['ingredients'] != []:
+            serializer.save(author=self.request.user)
 
     @action(detail=False, methods=['get'],
             permission_classes=[IsAuthenticated])
