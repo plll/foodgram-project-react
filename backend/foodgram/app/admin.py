@@ -3,10 +3,12 @@ from django.contrib import admin
 from users.models import Subscription, User
 from .models import (Favorite, Ingredient, IngredientInRecipe, Recipe,
                      ShoppingCart, Tag)
+from .forms import TagForm
 
 
 @admin.register(Tag)
 class TagAdmin(admin.ModelAdmin):
+    form = TagForm
     list_display = ('id', 'name', 'color', 'slug')
     search_fields = ('name',)
     list_editable = ('color',)
