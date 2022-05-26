@@ -44,11 +44,11 @@ class Subscription(models.Model):
     class Meta:
         constraints = [
             models.UniqueConstraint(
-                fields=['user', 'author'],
+                fields=['follower', 'author'],
                 name='Вы уже подписывались на данного автора!'
             ),
             models.CheckConstraint(
-                check=~Q(user=F('author')),
+                check=~Q(follower=F('author')),
                 name='Подсписываться на себя нельзя!'
             )
         ]
